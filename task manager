@@ -1,0 +1,3 @@
+git remote add origin https://github.com/vikram341/Algonive_Project_Name..git
+git branch -M main
+git push -u origin main

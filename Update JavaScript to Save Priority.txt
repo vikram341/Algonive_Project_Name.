@@ -1,0 +1,17 @@
+let priority = document.getElementById("prioritySelect").value;
+let priorityBadge = document.createElement("span");
+priorityBadge.classList.add("priority-badge");
+
+if (priority === "low") {
+    priorityBadge.classList.add("priority-low");
+    priorityBadge.textContent = "Low";
+} 
+else if (priority === "medium") {
+    priorityBadge.classList.add("priority-medium");
+    priorityBadge.textContent = "Medium";
+} 
+else {
+    priorityBadge.classList.add("priority-high");
+    priorityBadge.textContent = "High";
+}
+li.appendChild(priorityBadge);

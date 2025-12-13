@@ -1,0 +1,6 @@
+let dueDate = document.getElementById("dueDate").value;
+let deadlineBadge = document.createElement("span");
+deadlineBadge.classList.add("deadline-badge");
+deadlineBadge.textContent = dueDate ? "Due: " + dueDate : "No Deadline";
+li.appendChild(deadlineBadge);
+

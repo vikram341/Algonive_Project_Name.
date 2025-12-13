@@ -1,0 +1,32 @@
+let editingId = null;
+
+function addTask() {
+    let title = document.getElementById("title").value;
+    let description = document.getElementById("description").value;
+    let dueDate = document.getElementById("dueDate").value;
+
+    if (editingId) {
+        tasks = tasks.map(t => {
+            if (t.id === editingId) {
+                t.title = title;
+                t.description = description;
+                t.dueDate = dueDate;
+            }
+            return t;
+        });
+
+        editingId = null;
+        document.getElementById("addBtn").innerText = "Add Task";
+    } else {
+        tasks.push({
+            id: Date.now(),
+            title,
+            description,
+            dueDate,
+            complete: false
+        });
+    }
+
+    saveTasks();
+    renderTasks();
+}

@@ -1,0 +1,12 @@
+function editTask(id) {
+    let task = tasks.find(t => t.id === id);
+
+    document.getElementById("title").value = task.title;
+    document.getElementById("description").value = task.description;
+    document.getElementById("dueDate").value = task.dueDate;
+
+    // save ID being edited
+    editingId = id;
+
+    document.getElementById("addBtn").innerText = "Update Task";
+}

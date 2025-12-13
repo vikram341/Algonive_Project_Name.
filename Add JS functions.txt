@@ -1,0 +1,14 @@
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("id", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    let draggedId = ev.dataTransfer.getData("id");
+    let draggedEl = document.getElementById(draggedId);
+    ev.target.closest("ul").insertBefore(draggedEl, ev.target.nextSibling);
+}

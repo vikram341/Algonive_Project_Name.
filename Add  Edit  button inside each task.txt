@@ -1,0 +1,12 @@
+<li>
+    <strong>${task.title}</strong> — ${task.dueDate}
+    <p>${task.description}</p>
+
+    <button onclick="toggleComplete(${task.id})">
+        ${task.complete ? "Mark Incomplete" : "Mark Complete"}
+    </button>
+
+    <button onclick="editTask(${task.id})">Edit</button>
+
+    <button onclick="deleteTask(${task.id})" style="color:red">Delete</button>
+</li>

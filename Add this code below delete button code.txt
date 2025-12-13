@@ -1,0 +1,11 @@
+// Edit Button
+let editBtn = document.createElement("button");
+editBtn.textContent = "Edit";
+editBtn.className = "edit-btn";
+
+editBtn.addEventListener("click", () => {
+  let newTask = prompt("Edit your task:", span.textContent);
+  if (newTask !== null && newTask.trim() !== "") {
+    span.textContent = newTask;
+  }
+});

@@ -1,0 +1,41 @@
+body {
+    font-family: Arial;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+}
+
+.task-form input,
+.task-form textarea {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+#addBtn {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#taskList li {
+    background: white;
+    padding: 15px;
+    margin-top: 10px;
+    list-style: none;
+    border-radius: 5px;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}

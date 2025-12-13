@@ -1,0 +1,8 @@
+.dark {
+    background: #222;
+    color: #fff;
+}
+
+.dark li {
+    background: #333;
+}

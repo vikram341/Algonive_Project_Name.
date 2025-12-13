@@ -1,0 +1,26 @@
+function searchTask() {
+    let keyword = document.getElementById("search").value.toLowerCase();
+    let filtered = tasks.filter(t =>
+        t.title.toLowerCase().includes(keyword) ||
+        t.description.toLowerCase().includes(keyword)
+    );
+    renderTasksFiltered(filtered);
+}
+
+function renderTasksFiltered(filteredTasks) {
+    let list = document.getElementById("taskList");
+    list.innerHTML = "";
+
+    filteredTasks.forEach(task => {
+        let li = document.createElement("li");
+        li.innerHTML = `
+            <strong>${task.title}</strong> — ${task.dueDate}
+            <p>${task.description}</p>
+            <button onclick="toggleComplete(${task.id})">${task.complete ? "Mark Incomplete" : "Mark Complete"}</button>
+            <button onclick="editTask(${task.id})">Edit</button>
+            <button onclick="deleteTask(${task.id})" style="color:red">Delete</button>
+        `;
+        if (task.complete) li.classList.add("completed");
+        list.appendChild(li);
+    });
+}

@@ -1,0 +1,6 @@
+if (!t.complete && (due - today) <= 86400000 && (due - today) > 0) {
+    new Notification("Task Reminder", {
+        body: "Task '" + t.title + "' is due soon!",
+        icon: "icon.png"
+    });
+}

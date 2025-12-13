@@ -1,0 +1,4 @@
+<span class="priority ${task.priority}">${task.priority}</span>
+.priority.low { color: green; }
+.priority.medium { color: orange; }
+.priority.high { color: red; font-weight: bold; }

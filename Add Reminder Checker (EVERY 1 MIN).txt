@@ -1,0 +1,28 @@
+setInterval(() => {
+  let tasks = document.querySelectorAll("#taskList li");
+
+  tasks.forEach(task => {
+    let deadlineText = task.querySelector(".deadline-badge").textContent;
+    if (!deadlineText.includes("Due:")) return;
+
+    let date = deadlineText.replace("Due: ", "");
+    let deadline = new Date(date);
+    let now = new Date();
+
+    let diffHours = (deadline - now) / (1000 * 60 * 60);
+
+    // If task is due within 24 hours
+    if (diffHours < 24 && diffHours > 0) {
+      task.style.background = "#ffdfdf"; // light red highlight
+
+      alert("Reminder: Task is due soon!\n" +
+        task.querySelector("span").textContent +
+        "\nDeadline: " + date);
+    }
+
+    // If overdue
+    if (diffHours <= 0) {
+      task.style.background = "#ffd1d1"; // darker red
+    }
+  });
+}, 60000); // runs every 60 seconds

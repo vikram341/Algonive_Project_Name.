@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Task Manager</h1>
+
+        <div class="task-form">
+            <input type="text" id="title" placeholder="Task Title">
+            <textarea id="description" placeholder="Task Description"></textarea>
+            <input type="date" id="dueDate">
+            <button id="addBtn">Add Task</button>
+        </div>
+
+        <div class="filters">
+            <button onclick="filterTasks('all')">All</button>
+            <button onclick="filterTasks('complete')">Completed</button>
+            <button onclick="filterTasks('incomplete')">Incomplete</button>
+        </div>
+
+        <ul id="taskList"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

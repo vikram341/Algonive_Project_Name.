@@ -1,0 +1,1 @@
+let priority = document.getElementById("priority").value;

@@ -1,0 +1,28 @@
+li.setAttribute("draggable", "true");
+let dragItem = null;
+
+// When dragging starts
+document.addEventListener("dragstart", function (e) {
+  if (e.target.tagName === "LI") {
+    dragItem = e.target;
+    e.target.style.opacity = "0.5";
+  }
+});
+
+// When dragging ends
+document.addEventListener("dragend", function (e) {
+  if (e.target.tagName === "LI") {
+    e.target.style.opacity = "1";
+  }
+});
+
+// Handle drag over
+document.addEventListener("dragover", function (e) {
+  e.preventDefault();
+  let taskList = document.getElementById("taskList");
+  let closest = document.elementFromPoint(e.clientX, e.clientY);
+
+  if (closest && closest.tagName === "LI" && closest !== dragItem) {
+    taskList.insertBefore(dragItem, closest.nextSibling);
+  }
+});

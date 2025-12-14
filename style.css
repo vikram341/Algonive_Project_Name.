@@ -1,41 +1,43 @@
-body {
-    font-family: Arial;
-    background: #f4f4f4;
-    margin: 0;
-    padding: 20px;
-}
+*{box-sizing:border-box}body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial;background:#f4f6f8;color:#0f172a;margin:0;padding:20px;min-height:100vh}
+.container{max-width:900px;margin:0 auto;background:linear-gradient(180deg,#fff,#fbfdff);padding:20px;border-radius:12px;box-shadow:0 6px 20px rgba(16,24,40,0.06)}
+header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+h1{font-size:20px;margin:0}
+.top-controls{display:flex;gap:8px;align-items:center}
+#search{padding:8px 10px;border-radius:8px;border:1px solid #e6e9ef;width:220px}
+#darkToggle{padding:8px 10px;border-radius:8px;border:1px solid #e6e9ef;background:white;cursor:pointer}
 
-.container {
-    width: 90%;
-    max-width: 600px;
-    margin: auto;
-}
+.task-form input,#taskForm textarea,#taskForm select{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef;margin:8px 0;background:transparent}
+.task-form textarea{min-height:60px;resize:vertical}
+.row{display:flex;gap:8px;align-items:center}
+.row input[type="date"]{flex:1;min-width:140px}
+.row select{width:160px}
+.primary{background:#0ea5a2;color:white;border:none;padding:10px 14px;border-radius:8px;cursor:pointer}
 
-.task-form input,
-.task-form textarea {
-    width: 100%;
-    margin: 10px 0;
-    padding: 10px;
-}
+.controls{display:flex;justify-content:space-between;align-items:center;margin:12px 0}
+.filters button{background:transparent;border:1px solid transparent;padding:8px 10px;border-radius:8px;cursor:pointer;margin-right:6px}
+.filters button.active{background:#eef7f7;border:1px solid #bfecee}
 
-#addBtn {
-    width: 100%;
-    padding: 12px;
-    background: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
+.task-list{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.task{background:white;padding:12px;border-radius:10px;box-shadow:0 4px 14px rgba(2,6,23,0.04);position:relative;border:1px solid #f0f3f7;display:flex;flex-direction:column;gap:8px}
+.task.dragging{opacity:0.6;transform:scale(0.995)}
+.task .meta{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.task .title{font-weight:600}
+.task .desc{font-size:13px;color:#475569;margin:0}
+.task .due{font-size:12px;color:#334155}
+.priority{font-weight:700;padding:2px 6px;border-radius:6px;font-size:12px}
+.priority.low{color:#065f46;background:#ecfdf5}
+.priority.medium{color:#78350f;background:#fff7ed}
+.priority.high{color:#7f1d1d;background:#fff1f2}
 
-#taskList li {
-    background: white;
-    padding: 15px;
-    margin-top: 10px;
-    list-style: none;
-    border-radius: 5px;
-}
+.task .actions{display:flex;gap:8px;margin-top:6px}
+button.icon{border:1px solid #e6e9ef;background:transparent;padding:6px 8px;border-radius:8px;cursor:pointer}
+button.icon.warn{color:#dc2626}
 
-.completed {
-    text-decoration: line-through;
-    opacity: 0.6;
-}
+.completed .title{text-decoration:line-through;opacity:0.7}
+footer{margin-top:18px;font-size:13px;color:#475569}
+
+/* Dark mode */
+body.dark{background:#0b1220;color:#e6eef6}
+body.dark .container{background:linear-gradient(180deg,#04151f,#071827);box-shadow:none}
+body.dark .task{background:#071827;border:1px solid rgba(255,255,255,0.03)}
+body.dark #search, body.dark #darkToggle{background:#071827;color:#e6eef6;border:1px solid rgba(255,255,255,0.04)}
